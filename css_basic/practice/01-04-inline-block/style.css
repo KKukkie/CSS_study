@@ -1,0 +1,22 @@
+.block-container {
+  border: 3px solid blue;
+}
+
+.inline-container {
+  border: 3px solid red;
+}
+
+.block-container div {
+  border: 3px solid green;
+  width: 400px;
+  /* display 속성을 통해서 강제로 인라인 요소로 바꿀 수 있다. */
+  display: inline;
+}
+
+.inline-container span {
+  background-color: red;
+  /* 인라인 요소이기 때문에 가로나 세로와 같은 박스 크기를 조절하는 제어는 적용되지 않는다. */
+  width: 400px;
+  /* display 속성을 통해서 강제로 블록 요소로 바꿔서 제어할 수 있다. */
+  display: block;
+}

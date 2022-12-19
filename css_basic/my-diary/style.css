@@ -1,0 +1,90 @@
+/* 기본적으로 적용된 레이아웃 초기화 */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  padding: 5rem;
+  background-color: #eeeeee;
+
+  /* 가운데 정렬 */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  /* 가운데 정렬 */
+
+  padding: 50px 0;
+}
+
+.wrapper {
+  background-color: aliceblue;
+  border: 0.2rem solid gray;
+  border-radius: 1rem;
+  padding: 40px 30px;
+}
+
+.wrapper__head {
+  border-bottom: 1px dashed gray;
+}
+
+.wrapper__head__title {
+  font-weight: bold;
+  text-align: center;
+  background-color: peachpuff;
+  padding: 0.5rem;
+}
+
+.wrapper__head__sub-title {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+#point {
+  color: tomato;
+  text-decoration: underline;
+  display: block;
+  padding-top: 0.5rem;
+}
+
+.wrapper__body {
+  padding-top: 1rem;
+}
+
+.wrapper__body__content {
+  border: 0.1rem solid rgb(227, 225, 225);
+  padding: 1rem;
+}
+
+.wrapper__body__content .diary-title {
+  padding: 0.5rem;
+  background-color: rgb(241, 241, 241);
+  font-size: 1.3rem;
+}
+
+.wrapper__body__content .diary-content {
+  padding-top: 1rem;
+}
+
+.wrapper__body__content .diary-date {
+  padding-top: 1rem;
+}
+
+.kimchi {
+  color: red;
+  font-weight: 700;
+}
+
+.egg {
+  color: rgb(224, 224, 102);
+  font-weight: 700;
+}
+
+.highlight {
+  font-size: 1.3rem;
+  color: blue;
+  font-style: italic;
+  font-weight: 700;
+}

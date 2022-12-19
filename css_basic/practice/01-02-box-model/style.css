@@ -1,0 +1,23 @@
+/* .box1 {
+  background-color: gray;
+  width: 400px;
+  height: 300px; */
+
+/* 경계선 : [굵기] [스타일] [색깔] */
+/* 스타일 : 실선(solid, ridge, double, groove, inset, outset), 점선(dotted, dashed), 없음(none or hidden) */
+/* border: 2px groove red;
+
+  padding: 50px;
+  margin: 50px;
+} */
+
+div {
+  width: 200px;
+  height: 200px;
+  background-color: lightgray;
+}
+
+.box1 {
+  padding: 50px;
+  border: 1px solid blue;
+}

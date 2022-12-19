@@ -1,0 +1,51 @@
+/* //////////////////////////////////////////////////// */
+
+/* SELECTOR */
+
+/* 태그 선택자 */
+div {
+  background-color: antiquewhite;
+}
+
+/* ID 선택자 */
+.title {
+  color: red;
+  background-color: mediumaquamarine;
+}
+
+/* Class 선택자 */
+.contents {
+  background-color: brown;
+}
+
+/* 태그 자손 선택자 */
+div h1 {
+  margin-top: 1rem;
+}
+
+/* Class 자손 선택자 */
+.main .contents {
+  margin-left: 1rem;
+}
+
+.box1 .title {
+  color: yellow;
+}
+
+/* 다중 선택자 (Class + ID) */
+.title#headline {
+  font-size: 1rem;
+  color: violet;
+}
+
+/* //////////////////////////////////////////////////// */
+
+/* FONT */
+.contents {
+  font-size: 28px; /* 폰트 크기 */
+  font-style: italic; /* 폰트 스타일 */
+  text-decoration: underline; /* 폰트 꾸미기 (밑줄, 중간선 등) */
+  font-weight: 600; /* 글자 굵기 조절 */
+}
+
+/* //////////////////////////////////////////////////// */
