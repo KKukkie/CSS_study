@@ -1,0 +1,29 @@
+* {
+  box-sizing: border-box;
+}
+
+.box {
+  width: 300px;
+  padding: 20px;
+}
+
+.box1 {
+  height: 400px;
+  background-color: red;
+  float: left;
+}
+
+.box2 {
+  height: 200px;
+  background-color: blue;
+  float: right;
+}
+
+.box3 {
+  /* clear: both; */
+}
+
+/* clear both 가 적용된 박스를 적용하면 이전의 모든 블록 요소들에 적용한다. */
+.clearFix {
+  clear: both;
+}

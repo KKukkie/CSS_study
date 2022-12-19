@@ -33,6 +33,7 @@
 .wrapper__head__title {
   font-weight: bold;
   text-align: center;
+  color: white;
   background-color: peachpuff;
   padding: 0.5rem;
 }
@@ -88,4 +89,74 @@
   color: blue;
   font-style: italic;
   font-weight: 700;
+}
+
+.header {
+  /* width: 100%; */
+  border-bottom: 1px solid gray;
+}
+
+.header-inner {
+  width: 900px;
+  height: 100%;
+
+  /* 가운데 정렬 */
+  margin: 0 auto;
+}
+
+.logo {
+  float: left;
+  width: 100px;
+  height: 80px;
+  padding-top: 22px;
+}
+
+.logo h1 a {
+  text-decoration: none;
+  color: orange;
+}
+
+.logo h1 a:hover {
+  color: rebeccapurple;
+}
+
+.menu {
+  float: left;
+  width: calc(100% - 200px);
+  height: 80px;
+  text-align: center;
+}
+
+.menu .menu__ul {
+  /* 인라인 요소처럼 텍스트 제어가 가능하지만, 동시에 블락 요소처럼 가로 세로 제어가 가능하다. */
+  display: inline-block;
+}
+
+.menu .menu__ul li {
+  float: left;
+  list-style: none;
+  padding: 0 20px;
+}
+
+.menu .menu__ul li a {
+  color: black;
+  text-decoration: none;
+  display: block;
+  padding: 29px 20px;
+}
+
+/* 마우스 오버된 경우 적용할 스타일 지정 */
+.menu .menu__ul li a:hover {
+  color: orange;
+}
+
+.user {
+  float: left;
+  width: 100px;
+  height: 80px;
+  padding-top: 23px;
+}
+
+.clearFix {
+  clear: both;
 }
