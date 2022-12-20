@@ -8,7 +8,7 @@ div {
 }
 
 /* ID 선택자 */
-.title {
+#title {
   color: red;
   background-color: mediumaquamarine;
 }

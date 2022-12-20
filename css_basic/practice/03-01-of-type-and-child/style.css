@@ -1,0 +1,29 @@
+* {
+  box-sizing: border-box;
+}
+
+/* container 클래스 객체의 첫번째 자식 객체는 p 가 아니라 h1 이기 때문에 적용되지 않는다. */
+.container p:first-child {
+  background: red;
+}
+
+/* container 클래스 객체의 p 타입의 첫번째 자식 객체가 존재하므로 적용된다. */
+.container p:first-of-type {
+  background: blue;
+}
+
+/* container 클래스 객체의 p 타입의 마지막 자식 객체가 존재하므로 적용된다. */
+.container p:last-of-type {
+  background: yellow;
+}
+
+/* container 클래스 객체의 p 타입의 두번째 자식 객체가 존재하므로 적용된다. */
+.container p:nth-of-type(2) {
+  background: green;
+}
+
+/* container 클래스 객체의 span 타입의 첫번째 자식 객체가 존재하므로 적용된다. */
+.container span:first-of-type {
+  font-weight: 600;
+  text-decoration: underline;
+}

@@ -24,6 +24,6 @@
 }
 
 /* clear both 가 적용된 박스를 적용하면 이전의 모든 블록 요소들에 적용한다. */
-.clearFix {
+.clearfix {
   clear: both;
 }
