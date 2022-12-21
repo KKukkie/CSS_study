@@ -1,0 +1,42 @@
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  width: 500px;
+  height: 320px;
+  position: relative;
+}
+
+.container .base {
+  width: 200px;
+  height: 200px;
+  border: 2px dashed #aaaaaa;
+  border-radius: 10px;
+  background: #dddddd;
+}
+
+.container .target {
+  width: 200px;
+  height: 200px;
+  background: rgba(0, 0, 255, 0.8);
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: 2px solid blue;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.container .target span {
+  color: white;
+  font-size: 30px;
+}
+
+.container .target1 {
+  /* 요소를 y축 방향으로 0.75 축소 + x축 방향으로 20도 기울이려면? */
+  transform: scaleY(0.75) skewX(20deg);
+}

@@ -1,0 +1,22 @@
+* {
+  box-sizing: border-box;
+}
+
+.container button {
+  width: 200px;
+  color: white;
+  background-color: royalblue;
+  border-radius: 5px;
+  padding: 7px;
+  text-align: left;
+
+  transition-property: all;
+  transition-duration: 1s;
+  transition-delay: 0.3s;
+  transition-timing-function: ease-in-out;
+}
+
+.container button:hover {
+  width: 300px;
+  background-color: rgba(65, 105, 225, 0.7);
+}

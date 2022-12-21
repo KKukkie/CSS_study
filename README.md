@@ -1,5 +1,9 @@
 # CSS study
 
+```
+CSS : Cascading Style Sheet
+```
+
 ## 선택자
 
 ```
@@ -202,4 +206,293 @@ A ~ B {
 div {
   font-family: "Song Myung", serif;
 }
+```
+
+## Cascading
+
+```
+[수많은 스타일 요소 중 어떤 스타일을 브라우저에 그릴지 결정해주는 CSS 우선순위 적용 원리]
+
+1) 중요도
+- CSS 가 선언된 위치에 따라 우선순위가 결정된다.
+    > 사용자나 개발자가 따로 설정하지 않았는데도 설정되는 기본 스타일
+
+- 브라우저 스타일 시트 : 브라우저 개발자가 만든 기본 스타일 시트
+
+- 사용자 스타일 시트 : 웹페이지 사용자가 직접 설정하는 스타일 시트
+    > 사용자 폰트 지정
+    > 고대비 모드 사용
+
+- 개발자 스타일 시트 : 웹개발자가 직접 만든 스타일 시트
+    > 개발자 시트 안에서도 우선순위를 가진다.
+    [ <link> 로 연결한 css 파일 ] < [ <style> 요소 안에 있는 CSS ] < [ 인라인 스타일 CSS ]
+
+- 적용 우선순위 : 브라우저 < 사용자 < 개발자
+
+
+2) 구체성 (명시도)
+- 선택할 대상을 구체적으로 특정할수록 명시도가 높아진다.
+    > 명시도가 높아지면 우선순위도 함께 높아진다.
+
+[부모에게 상속받은 속성] < [전체 선택자] < [태그 선택자] < [클래스 선택자 & 가상 선택자] < [ID 선택자]
+                          *      <     div    <        .                <     #
+
+- 강제로 명시도 끌어올리기 : [ !important ]
+* {
+    color: red!important;
+}
+
+
+3) 선언 순서
+- 나중에 선언한 스타일이 우선 적용된다.
+#text-id {
+    color: violet
+}
+
+#text-id {
+    color:teal
+}
+
+> teal 색깔이 적용된다.
+
+```
+
+## Background
+
+```
+
+background : [color] [image] [repeat] [positoin/size] [attachment]
+
+> background : red url("../star.png") no-repeat center/cover fixed
+
+```
+
+## 상대 단위 - vw / vh
+
+```
+[요소의 규격을 viewport 의 너비값과 높이값에 비례하여 결정합니다.]
+
+- viewport : 브라우저 안에서 실제로 화면이 그려지는 영역
+
+
+```
+
+## position
+
+```
+[HTML 요소가 배치되는 방식을 결정하는 속성]
+
+(x, y, z 축)
+
+- top / left / bottom / right : 해당 방향 기준으로 요소의 좌표값을 변경한다.
+
+- position: static
+    > 요소를 문서상 원래 있어야 하는 위치에 배치한다.
+    > 기본값
+    > top/left/bottom/right 적용 불가
+
+- position: relative
+    > 원래 있던 자리를 기준으로 요소의 위치를 조정할 수 있다.
+    > top/left/bottom/right 적용 가능
+
+- position: absolute
+    > viewport 의 절대 좌표를 기준으로 요소의 위치를 조정할 수 있다.
+    > top/left/bottom/right 적용 가능
+
+- position: fixed
+    > 스크롤과 무관하게 viewport 를 기준으로 요소의 위치를 설정할 수 있다.
+    > viewport 가 기준
+
+- position: sticky
+    > 요소의 원래 위치에 있다가 스크롤이 내려가면 지정한 좌표에 고정된다.
+    > static 과 fixed 를 혼합해서 사용하는 것과 같음
+    > 부모 요소의 좌표가 기준
+
+- [z-index]
+    > 여러개의 요소가 겹쳐져 있을 때, 무엇이 앞으로 나올지 결정하는 속성
+    > 값이 클수록 앞에 위치한다.
+
+```
+
+## Transition
+
+```
+[CSS 스타일 변화 시점을 부드럽고 자연스럽게 처리할 수 있게 해주는 기능이다.]
+
+- trasition-property
+    > 어떠한 속성(property) 에 transition 을 적용할 것인지 지정한다.
+    > transition-property: color, transform
+
+- transition-duration
+    > transition 에 걸리는 시간을 지정한다.
+    > transition-duration : 0.2s
+
+- transition-timing-function
+    > transtion 의 속도 패턴을 지정한다.
+    > transition-duration: ease-in-out
+        > linear : 일정한 속도로 변화한다.
+        > ease : 시작할 때는 빨라지다 점차 느려진다.
+        > ease-in : 천천히 시작하다가 점차 빠르게 끝난다.
+        > ease-out : 빠르게 시작하다가 점차 천천히 끝난다.
+        > ease-in-out : 천천히 시작하다가 정상 속도가 됐다가 빠르게 끝난다.
+
+- transition-delay
+    > transition 요청을 받은 후, 실제로 실행되기까지 기다려야하는 시간의 양을 지정한다.
+    > transition-delay: 2s
+
+- 단축 속성
+    transition: [property] [duration] [timing-function] [delay]
+    > transition: color 0.4s ease-in-out 1s
+
+```
+
+## Transform
+
+```
+[요소에 이동, 회전, 확대/축소, 비틀기 등의 변형 효과를 줄 수 있다.]
+[변환 함수를 중첩 적용 시키는 것이 가능한 속성이다.]
+
+(* deg : 각도)
+
+
+- translate(x, y)
+    > 요소의 좌표를 움직일 수 있다.
+    > X축으로 x만큼, Y축으로 y만큼 이동시킨다.
+    > transform: translate(20px, 25%)
+    > translateX(n), translateY(n)
+
+- scale(x, y)
+    > X축으로 x만큼, Y축으로 y만큼, 요소를 축소 혹은 확대한다.
+    > transform: scale(0.75, 1.1)
+    > scaleX(n), scaleY(n)
+
+- skew(x, y)
+    > X축으로 x만큼, Y축으로 y만큼, 요소를 기울인다.
+    > transform: skew(15deg, 10deg)
+    > skewX(n), skew(n)
+
+- rotate(n)
+    > 요소를 n만큼 회전시킨다.
+    > transform: rotate(45deg)
+
+- 중첩 적용
+    > 요소를 y축 방향으로 0.75 축소 + x축 방향으로 20도 기울이려면?
+        => transform: scaleY(0.75) skewX(20deg)
+
+```
+
+## Animation
+
+```
+[여러 이미지를 연결해서 자연스럽게 움직이는 것처럼 보이게 만드는 기법]
+
+> transition 을 이용해서 애니매이션을 만들었다.
+> animation 속성과 keyframe 을 활용해서도 만들 수 있다.
+
+- transition : 특정한 이벤트를 기점으로 작동한다. (hover 등)
+
+- animation : 시작하기 위한 이벤트가 필요 없다. 시작, 정지, 반복까지 제어할 수 있다.
+    > @keyframes 로 애니메이션을 정의하고, 정의한 애니메이션을 불러와서 제어해주어야 한다.
+    > 또 @keyframes 로 다시 제어하는 로직을 만들어야 한다.
+    > 매우 귀찮다...
+    > transition 으로는 만들 수 없는 애니메이션을 이 속성으로 만들면 된다.
+
+- keyframes (@keyframes)
+    > CSS 애니메이션의 시작, 중간, 끝 등의 중간 상태를 정의한다.
+
+@keyframes moveRight { // moveRight : 애니메이션 이름
+    from { // 시작 시점 정의
+        left: 0;
+    }
+    to { // 종료 시점 정의
+        left: 200px;
+    }
+}
+
+@keyframes moveRight { // moveRight : 애니메이션 이름
+    0% { // 시작 시점 정의
+        left: 0;
+    }
+    50% { // 중간 시점 정의
+        left: 200px;
+    }
+    100% { // 종료 시점 정의
+        top: 200px;
+        left: 200px;
+    }
+}
+
+- animation-name
+    > 어떠한 keyframes 를 요소에 적용할 것인지 지정한다.
+    > animation-name: moveRight
+
+- animation-duration
+    > 애니메이션을 한 번 재생하는데 걸리는 시간을 설정한다.
+    > animation-duration: 2s
+
+- animation-direction
+    > 애니메이션 재생 방향을 정의한다. (정방향/역방향)
+    > animation-direction: alternate
+        > normal (기본값) : 정방향 재생
+        > reverse : 역방향 재생
+        > alternate : 정방향 재생, 반복 시 정방향/역방향을 번갈아 재생
+        > alternate-reverse : 역방향 재생, 반복 시 역방향/정방향을 번갈아 재생
+
+- animation-iteration-count
+    > 애니메이션 재생 횟수를 정의한다.
+    > animation-iteration-count: infinte
+        > infinite : 무한
+        > n : n번 재생
+
+- animation-timing-function
+    > 애니메이션 재생 패턴을 정의한다.
+    > transition-timing-function 과 유사하다.
+
+- animation-delay
+    > 애니메이션 시작을 얼마나 지연할 지 설정한다.
+    > animation-delay: 2s
+
+- 단축 설정
+    animation: [name] [duration] [timing-function] [delay] [iteration-count] [direction]
+    > animation: moveRight 0.4s linear 1s infinite alternate
+
+
+```
+
+## Grid
+
+```
+
+- Flex 의 대체 레이아웃이 아니다.
+- 큰 규모의 레이아웃 구성에 적합
+- 레이아웃 구조가 확실하게 잡혀있는 경우, 효율적으로 반응형 디자이인 구현할 수 있다.
+- 단, 그리드는 상대적을 최신 기술이기 때문에 모든 브라우저에서 지원하지 않는다.
+
+- fr
+    > fraction (분수) 의 약자
+    > grid-template 에서 사용할 수 있는 비율 단위
+        > grid-template-columns: 1fr 2fr 200px
+        > grid-template-columns: 1fr 2fr 1fr 1fr
+
+- repeat(a, b)
+    > grid-template 에서 사용할 수 있는 반복 함수 b 규격의 grid-template 을 a 개 생성한다.
+    > grid-template-columns: repeat(4, 1fr) == grid-template-columns = 1fr 1fr 1fr 1fr
+    > grid-template-columns: 3fr repeat(2, 1fr 200px) == grid-template-columns = 3fr 1fr 200px 1fr 200px
+
+```
+
+## 미디어 쿼리
+
+```
+
+[viewport 의 너비에 따라 웹사이트의 스타일 시트를 수정할 수 있다.]
+> viewport 너비 이외에도 단말기의 종류, 해상도 등을 기준으로 설정할 수 있다.
+
+@media [조건문] {}
+
+@media screen and (max-width: 500px) {
+    // 스크린의 viewport 너비가 500px 이하일 경우
+    // 적용시킬 스타일 시트
+}
+
 ```

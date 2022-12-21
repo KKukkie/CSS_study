@@ -1,0 +1,47 @@
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.sidebar {
+  width: 170px;
+  background: orange;
+  padding: 5px 15px;
+}
+
+.sidebar ul {
+  width: 100%;
+  padding: 0;
+}
+
+.sidebar ul li {
+  list-style: none;
+  padding: 5px 0;
+  color: #ffffff;
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.3);
+}
+
+.contents {
+  /* 사용자가 어떤 방식으로 웹페이지를 접속할지 모르니 calc 로 계산한다. */
+  width: calc(100% - 170px);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  padding: 0 10px;
+}
+
+.contents .item {
+  width: 24%;
+  height: 180px;
+  margin-bottom: 10px;
+  background-image: url("../img/item1.jpeg");
+  background-size: contain;
+}
