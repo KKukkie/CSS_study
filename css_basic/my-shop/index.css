@@ -1,0 +1,379 @@
+/* ///////////////////////////////////////////////////////// */
+/* 기본 설정 */
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap");
+
+* {
+  box-sizing: border-box;
+  font-family: "Noto Sans KR", "돋움", "sans-serif";
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+/* ///////////////////////////////////////////////////////// */
+
+/* ///////////////////////////////////////////////////////// */
+/* Banner */
+.mainBanner {
+  width: 100%;
+  height: 280px;
+  background-image: url("./img/banner.jpg");
+  background-size: cover;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  margin-bottom: 20px;
+}
+
+.mainBanner .text {
+  font-size: 42px;
+  font-weight: 700;
+  color: white;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
+
+  animation: titleText 1s ease-in-out;
+}
+
+@keyframes titleText {
+  0% {
+    transform: translateY(70px);
+    opacity: 0;
+  }
+  92% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+/* ///////////////////////////////////////////////////////// */
+
+/* ///////////////////////////////////////////////////////// */
+/* Contents */
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.wrapper {
+  width: 100%;
+  max-width: 1320px;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  padding: 0 10px;
+}
+
+/* SideBar */
+.sideBar {
+  width: 170px;
+}
+
+.mainMenu {
+  background: orange;
+  border-radius: 5px;
+  padding: 10px 15px;
+}
+
+.mainMenu ul {
+  padding: 0;
+  display: block;
+}
+
+.mainMenu ul li {
+  list-style: none;
+  display: block;
+}
+
+.mainMenu ul li a {
+  display: block;
+  padding: 10px;
+  color: white;
+  border-radius: 20px;
+  transition: all 0.3s ease-in-out;
+}
+
+.writeBtnBox {
+  margin-top: 10px;
+}
+
+.writeBtn {
+  width: 100%;
+  background: black;
+  border: 1px solid black;
+  color: white;
+  padding: 10px 20px;
+  text-align: left;
+  font-size: 16px;
+
+  transition: all 0.3s ease-in-out;
+}
+
+.writeBtn .arrow {
+  display: inline-block;
+  padding-left: 10px;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Card */
+.itemWrap {
+  width: calc(100% - 170px);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+
+  padding-left: 15px;
+}
+
+.itemWrap .item {
+  width: calc(25% - 7px);
+  aspect-ratio: 6 / 5;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.itemWrap .item::after {
+  content: "";
+  display: block;
+  background-color: rgba(0, 0, 0, 0.2);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  z-index: 2;
+  opacity: 0;
+}
+
+.itemWrap .item .imgBox {
+  /* 부모와 따라가도록 설정 */
+  width: 100%;
+  height: 100%;
+}
+
+.itemWrap .item .imgBox img {
+  /* 부모와 따라가도록 설정 */
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.itemWrap .item .textBox {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  padding: 20px;
+
+  z-index: 3;
+}
+
+.itemWrap .item .textBox p {
+  color: white;
+  margin: 5px 0;
+}
+
+.itemWrap .item .textBox .textBox__name {
+  transform: translateY(50px);
+
+  font-size: 1em;
+  font-weight: 600;
+  opacity: 0;
+}
+
+.itemWrap .item .textBox .textBox__price {
+  transform: translateY(50px);
+
+  font-size: 1em;
+  font-weight: 500;
+  opacity: 0;
+}
+
+.itemWrap .item:after,
+.item .imgBox img,
+.item .textBox .textBox__name,
+.item .textBox .textBox__price {
+  transition: all 0.4s ease-in-out;
+}
+
+/* ///////////////////////////////////////////////////////// */
+
+/* ///////////////////////////////////////////////////////// */
+/* MediaQuery */
+
+/* Mobile */
+@media screen and (max-width: 767px) {
+  .mainBanner {
+    height: 160px;
+    margin-bottom: 0;
+  }
+
+  .mainBanner .text {
+    font-size: 26px;
+  }
+
+  .wrapper {
+    flex-direction: column;
+    padding: 0;
+  }
+
+  .sideBar {
+    width: 100%;
+  }
+
+  .mainMenu {
+    padding: 0;
+    border-radius: 0;
+  }
+
+  .mainMenu ul {
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .mainMenu ul li a {
+    font-size: 14px;
+    padding: 12px 10px;
+  }
+
+  .writeBtnBox {
+    display: none;
+  }
+
+  .itemWrap {
+    padding: 5px 15px;
+    width: 100%;
+    margin-top: 12px;
+  }
+
+  .itemWrap .item {
+    width: calc(50% - 7px);
+    overflow: visible;
+    border: 1px solid #dddddd;
+  }
+
+  .itemWrap .item .textBox {
+    position: relative;
+    width: 100%;
+    height: auto;
+  }
+
+  .itemWrap .item .textBox p {
+    color: black;
+  }
+
+  .itemWrap .item .textBox .textBox__name {
+    font-size: 18px;
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .itemWrap .item .textBox .textBox__price {
+    font-size: 12px;
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Tablet */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .itemWrap .item {
+    overflow: visible;
+    border: 1px solid #dddddd;
+  }
+
+  .itemWrap .item .textBox {
+    position: relative;
+    width: 100%;
+    height: auto;
+  }
+
+  .itemWrap .item .textBox p {
+    color: black;
+  }
+
+  .itemWrap .item .textBox .textBox__name {
+    font-size: 18px;
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .itemWrap .item .textBox .textBox__price {
+    font-size: 12px;
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 모든 hover 동작은 모바일에서는 동작하지 않는다. 비활성화 처리한다. */
+@media screen and (min-width: 1024px) {
+  .mainMenu ul li a:hover {
+    background: rgb(255, 144, 0);
+  }
+
+  .writeBtn:hover {
+    background: white;
+    color: #333333;
+  }
+
+  .writeBtn:hover .arrow {
+    /* inline 속성이면 적용되지 않는다. */
+    transform: translateX(50px);
+  }
+
+  .itemWrap .item:hover .textBox .textBox__name {
+    opacity: 1;
+    transition: transform 0.35s ease-in-out;
+    transform: translateY(0);
+  }
+
+  .itemWrap .item:hover .textBox .textBox__price {
+    opacity: 1;
+    transition: transform 0.35s ease-in-out 0.15s;
+    transform: translateY(0);
+  }
+
+  .itemWrap .item:hover {
+    cursor: pointer;
+  }
+
+  .itemWrap .item:hover:after {
+    opacity: 1;
+  }
+
+  .itemWrap .item:hover .imgBox img {
+    transform: scale(1.1);
+    filter: blur(3px);
+  }
+}
+
+/* ///////////////////////////////////////////////////////// */

@@ -72,10 +72,17 @@ CSS : Cascading Style Sheet
 
 ```
 1) 블록 요소 : div > 자동으로 다음 줄로 넘어간다.
+> 전후 줄바꿈이 들어가 다른 엘리먼트들을 다른 줄로 밀어내고 혼자 한 줄을 차지
 - div, p, ul, dl, p, h~, ...
 
 2) 인라인 요소 : 자동으로 다음 줄로 넘어가지 않는다.
+> 전후 줄바꿈 없이 한 줄에 다른 엘리먼트들과 나란히 배치
 - a, span, img, strong, em, input, button, textarea, select, ...
+
+3) inline-block 요소 : 전후 줄바꿈 없이 한 줄에 다른 엘리먼트들과 나란히 배치되지만, width와 height 속성 지정 및 margin과 padding 속성의 상하 간격 지정이 가능
+> 내부적으로는 block 엘리먼트의 규칙을 따르면서 외부적으로 inline 엘리먼트의 규칙을 따르게 되는 것
+- button, input, select, ...
+
 ```
 
 ## Float + clear
@@ -494,5 +501,40 @@ background : [color] [image] [repeat] [positoin/size] [attachment]
     // 스크린의 viewport 너비가 500px 이하일 경우
     // 적용시킬 스타일 시트
 }
+
+```
+
+## BreakPoint
+
+```
+
+[반응형 웹사이트 작업의 기준이 되는 중단점을 말한다.]
+> PC / 태블릿 / 모바일의 기준이 되는 규격 분기
+
+[중단점] (> 절대적인 규격은 없다. 임시로 나눈 것 뿐이다.)
+- Mobile : 0 ~ 767px
+- Tablet : 768px ~ 1023px
+- PC : 1024px ~ 1439px
+- PC Large : 1440px ~
+
+
+```
+
+## 반응형 웹에서 자주 사용하는 속성 정리
+
+```
+
+- max-width & max-height : 해당 요소의 최대 너비 or 최대 높이를 설정합니다.
+    > max-width: 1240px;
+
+- min-width & min-height : 해당 요소의 최소 너비 or 최소 높이를 설정합니다.
+    > min-width: 420px;
+
+- max : 소괄호 안에 입력된 값 중 제일 높은 값을 속성값으로 출력하는 함수.
+    > height: max(320px, 20%)
+
+- min : 소괄호 안에 입력된 값 중 제일 낮은 값을 속성값으로 출력하는 함수.
+    > height: min(1240px, 100%)
+
 
 ```
